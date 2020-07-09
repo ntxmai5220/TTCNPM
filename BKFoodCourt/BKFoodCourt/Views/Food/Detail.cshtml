@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@model BKFoodCourt.DatabaseAccess.EF.Food
+
+<div class="row">
+    <div class="card shadow mb-4" style="left: 100px;">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="food-image" src=@Model.Url1>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img class="food-image" src=@Model.Url2>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="food-image" src=@Model.Url3>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-4 card-price" style="left:150px">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;">@Model.Name</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Price đồng</div>
+                    </div>
+                    <div class="col-auto">
+                        @using (Html.BeginForm("addToCart", "Cart", new { foodId = Model.ID }))
+                        {
+                            <button type="submit" class="btn btn-success" style="font-size:18px">Thêm vào giỏ hàng</button>
+                        }
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>@Model.Description</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
