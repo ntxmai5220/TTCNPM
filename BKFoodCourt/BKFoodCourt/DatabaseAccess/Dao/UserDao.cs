@@ -1,11 +1,9 @@
 ﻿using BKFoodCourt.DatabaseAccess.EF;
-using BKFoodCourt.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace BKFoodCourt.DatabaseAccess.Dao
 {
@@ -58,10 +56,10 @@ namespace BKFoodCourt.DatabaseAccess.Dao
             return acc;
         }
 
-        public int UpdateInfo(Account account,string oldPassword)
+        public int UpdateInfo(Account account, string oldPassword)
         {
             Account acc;
-            if((acc = GetInfo(account.Email)) != null)
+            if ((acc = GetInfo(account.Email)) != null)
             {
                 acc.PassWord = acc.PassWord.Trim();
                 if (acc.PassWord == oldPassword)

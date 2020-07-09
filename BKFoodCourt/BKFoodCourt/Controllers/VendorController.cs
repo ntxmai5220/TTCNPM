@@ -2,6 +2,7 @@
 using BKFoodCourt.DatabaseAccess.Dao;
 using BKFoodCourt.DatabaseAccess.EF;
 using BKFoodCourt.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,13 +31,74 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
-        public ActionResult UpdateMenu()
+        public ActionResult UpdateMenu(string search, int? page)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new FoodDao();
+            List<Food> foodList = dao.search(search);
+            return View(foodList.ToPagedList(page ?? 1, 8));
+        }
+        public ActionResult UpdateItem(int foodId)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new FoodDao();
+            Food food = dao.getById(foodId);
+            return View(food);
+        }
+        public ActionResult UpdateItemAction(Food model)
+        {
+            FoodDao dao = new FoodDao();
+            if (ModelState.IsValid)
+            {
+                if (dao.Update(model) >= 0)
+                {
+                    return RedirectToAction("UpdateMenu");
+                }    
+                else
+                {
+                    ModelState.AddModelError("", "Lỗi cập nhật");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Vui lòng điền đủ và chính xác các trường.");
+            }
+            return View("UpdateItem", new { foodId = model.ID });
+
+        }
+        public ActionResult AddFood()
         {
             if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
             return View();
+        }
+        public ActionResult AddFoodAction(Food food)
+        {
+            FoodDao dao = new FoodDao();
+            if (ModelState.IsValid)
+            {
+                if (dao.Update(food) >= 0)
+                {
+                    return RedirectToAction("UpdateMenu");
+                }    
+                else
+                {
+                    ModelState.AddModelError("", "");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "");
+            }
+            return View("AddFood");
         }
         public ActionResult VendorInfo()
         {
@@ -54,6 +116,25 @@ namespace BKFoodCourt.Controllers
                 return RedirectToAction("Login", "User");
             }
             return View();
+        }
+        public ActionResult CreateAccountAction(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.TypeAccount = 2;
+                UserDao dao = new UserDao();
+                if (dao.InsertAcc(model) > 0)
+                {
+                    return RedirectToAction("Index", "Vendor");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Lỗi!");
+                }
+            }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
+            return View("CreateAccount","Vendor");
         }
         public ActionResult Report()
         {
@@ -73,6 +154,10 @@ namespace BKFoodCourt.Controllers
         }
         public ActionResult UpdateInfo()
         {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             UpdateModel update = new UpdateModel();
             update.Name = login.Name;

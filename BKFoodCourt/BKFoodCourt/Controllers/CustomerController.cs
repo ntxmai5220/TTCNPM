@@ -12,6 +12,7 @@ namespace BKFoodCourt.Controllers
 {
     public class CustomerController : Controller
     {
+        // GET: Customer
         private bool check()
         {
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
@@ -21,7 +22,7 @@ namespace BKFoodCourt.Controllers
             }
             return true;
         }
-        // GET: Customer
+
         public ActionResult Index()
         {
             if (!check())
@@ -49,6 +50,10 @@ namespace BKFoodCourt.Controllers
         }
         public ActionResult UpdateInfo()
         {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             UpdateModel update = new UpdateModel();
             update.Name = login.Name;
@@ -59,7 +64,7 @@ namespace BKFoodCourt.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(model.NewPassword!=null)
+                if (model.NewPassword != null)
                     model.NewPassword = model.NewPassword.Trim();
                 if (model.RetypePassword != null)
                     model.RetypePassword = model.RetypePassword.Trim();
@@ -91,6 +96,28 @@ namespace BKFoodCourt.Controllers
                 }
             }
             return RedirectToAction("UpdateInfo");
+        }
+
+        public ActionResult Order(int CustomerID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            List<DonHang> res = dao.getDonHangOfCustomer(CustomerID);
+            return View(res);
+        }
+
+        public ActionResult OrderDetail(int OrderID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            List<OrderDetail> res = dao.getInfoOrder(OrderID);
+            return View(res);
         }
     }
 }

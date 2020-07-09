@@ -62,7 +62,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="https://www.facebook.com/bkfoodcourt">Facebook</a>
+                        <a class="collapse-item" href="https://www.facebook.com/bkfoodcourt">Face book</a>
                         <a class="collapse-item" href=@Url.Action("Contact","Customer")>Liên hệ chúng tôi</a>
                     </div>
                 </div>
@@ -152,7 +152,11 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href=@Url.Action("UserInfo","Customer")>
                                     <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Thông tin
+                                    Thông tin tài khoản
+                                </a>
+                                <a class="dropdown-item" href=@Url.Action("Order","Customer",new { CustomerID = user.ID })>
+                                    <i class="fa fa-shopping-cart fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Đơn hàng của tôi
                                 </a>
                                 <a class="dropdown-item" href=@Url.Action("Logout","User")>
                                     <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i>

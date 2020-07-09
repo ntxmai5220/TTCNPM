@@ -49,6 +49,10 @@ namespace BKFoodCourt.Controllers
         }
         public ActionResult UpdateInfo()
         {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             UpdateModel update = new UpdateModel();
             update.Name = login.Name;

@@ -63,8 +63,29 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
+        public ActionResult CreateAccountAction(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.TypeAccount = 3;
+                UserDao dao = new UserDao();
+                if (dao.InsertAcc(model) > 0)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                    ModelState.AddModelError("", "Lỗi!");
+            }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
+            return View("CreateAccount","Admin");
+        }
         public ActionResult UpdateInfo()
         {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             UpdateModel update = new UpdateModel();
             update.Name = login.Name;
@@ -98,7 +119,7 @@ namespace BKFoodCourt.Controllers
                     }
                     if (res == 0)
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
                     }
                     if (res == -1)
                     {
@@ -106,7 +127,7 @@ namespace BKFoodCourt.Controllers
                     }
                 }
             }
-            return RedirectToAction("UpdateInfo");
+            return View("UpdateInfo");
         }
     }
 }
