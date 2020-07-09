@@ -28,6 +28,7 @@ namespace BKFoodCourt.Controllers
                 var result = dao.Login(model.Email, model.PassWord);
                 var user = dao.GetInfo(model.Email);
                 var userSession = new LoginModel();
+                Session.RemoveAll();
                 switch (result)
                 {
                     case 0: //Customer

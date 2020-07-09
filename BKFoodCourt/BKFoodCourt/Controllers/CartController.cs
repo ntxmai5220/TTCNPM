@@ -144,11 +144,11 @@ namespace BKFoodCourt.Controllers
             {
                 if (state == 1)
                 {
-                    return RedirectToAction("Index", "Momo");
+                    return RedirectToAction("Cash", "Payment");
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Momo");
+                    return RedirectToAction("Momo", "Payment");
                 }
             }
             else
@@ -156,7 +156,6 @@ namespace BKFoodCourt.Controllers
                 ModelState.AddModelError("", "Bạn cần phải chấp nhận điều khoản và chính sách để có thể thực hiện thanh toán.");
                 return View("Index");
             }
-            return View();
         }
     }
 }

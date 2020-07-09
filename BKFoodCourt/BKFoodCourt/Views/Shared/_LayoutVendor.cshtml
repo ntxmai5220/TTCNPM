@@ -43,12 +43,6 @@
             <!-- Heading -->
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href=@Url.Action("UpdateMenu","Vendor")>
-                    <i class="fa fa-list "></i>
-                    <span>Cập nhật menu</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa fa-file"></i>
                     <span>Xem báo cáo</span>
@@ -64,6 +58,12 @@
                 <a class="nav-link" href=@Url.Action("CreateAccount","Vendor")>
                     <i class="fa fa-plus "></i>
                     <span>Tạo tài khoản Cook</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=@Url.Action("UpdateMenu","Vendor")>
+                    <i class="fa fa-upload "></i>
+                    <span>Cập nhật món ăn</span>
                 </a>
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -113,7 +113,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">0</span>
+                                <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
@@ -211,6 +211,5 @@
     <script src="~/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="~/Assets/js/demo/datatables-demo.js"></script>
-
 </body>
 </html>

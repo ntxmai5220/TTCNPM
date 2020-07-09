@@ -9,6 +9,12 @@ namespace BKFoodCourt.DatabaseAccess.EF
     [Table("Food")]
     public partial class Food
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Food()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public int ID { get; set; }
 
         [Required]
@@ -32,5 +38,8 @@ namespace BKFoodCourt.DatabaseAccess.EF
         [Required]
         [StringLength(4000)]
         public string Url3 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

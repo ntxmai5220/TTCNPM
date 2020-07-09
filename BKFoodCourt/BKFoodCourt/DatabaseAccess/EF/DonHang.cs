@@ -6,32 +6,35 @@ namespace BKFoodCourt.DatabaseAccess.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Account")]
-    public partial class Account
+    [Table("DonHang")]
+    public partial class DonHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
+        public DonHang()
         {
-            DonHangs = new HashSet<DonHang>();
+            OrderDetails = new HashSet<OrderDetail>();
         }
 
         public int ID { get; set; }
 
         [Required]
-        [StringLength(325)]
-        public string Email { get; set; }
+        [StringLength(100)]
+        public string OrderCode { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public string PassWord { get; set; }
+        public int NumFood { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Name { get; set; }
+        public int CustomerID { get; set; }
 
-        public int TypeAccount { get; set; }
+        public int Price { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime Timer { get; set; }
+
+        public bool State { get; set; }
+
+        public virtual Account Account { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
