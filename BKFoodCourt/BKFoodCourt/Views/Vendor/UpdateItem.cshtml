@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "UpdateItem";
+    Layout = "~/Views/Shared/_LayoutVendor.cshtml";
+}
+
+@model BKFoodCourt.DatabaseAccess.EF.Food
+<div class="row" style="margin-left:10px">
+    <div class="col-md-12 text-center mb-5 site-animate">
+        <h2 class="display-4">Cập nhật món ăn.</h2>
+
+    </div>
+    <div class="col-md-7 mb-5 site-animate">
+        @using (Html.BeginForm("UpdateItemAction", "Vendor", FormMethod.Post))
+        {
+            <label for="name" class="sr-only">ID</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.ID, new { @class = "form-control", @value = Model.ID, @readonly = "readonly" })
+            </div>
+            <label for="email" class="sr-only">Tên</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @value = Model.Name })
+            </div>
+            <label for="name" class="sr-only">Giá</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @value = Model.Price })
+                (đơn vị: đồng)
+            </div>
+            <label for="name" class="sr-only">Url hình ảnh 1</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.Url1, new { @class = "form-control", @value = Model.Url1 })
+
+            </div>
+            <label for="name" class="sr-only">Url hình ảnh 2</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.Url2, new { @class = "form-control", @value = Model.Url2 })
+            </div>
+            <label for="name" class="sr-only">Url hình ảnh 3</label>
+            <div class="form-group">
+
+                @Html.TextBoxFor(model => model.Url3, new { @class = "form-control", @value = Model.Url3 })
+            </div>
+            <label for="message" class="sr-only">Mô tả</label>
+            <div class="form-group">
+
+                @*<textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                placeholder="Thêm mô tả"></textarea>*@
+                @Html.TextAreaFor(model => model.Description, new { @cols = "30", rows = "10", @class = "form-control", @value = Model.Description })
+            </div>
+            <br /><br />
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-lg" value="Complete">
+            </div>
+        }
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4 site-animate">
+        <p><img src="~/Assets/img/hcmut.jpg" alt="" class="img-fluid"></p>
+        <p class="text-black">
+            Address: <br> 268 Lý Thường Kiệt, Phường 14, Quận 10 <br> Hồ Chí Minh, Việt Nam <br> <br>
+            Phone: <br> +(84) 123 456 <br> <br>
+            Email: <br> <a href="mailto:info@bkfoodcourt.com">info@bkfoodcourt.com</a>
+        </p>
+    </div>
+</div>
+
+

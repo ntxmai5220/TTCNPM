@@ -9,12 +9,6 @@ namespace BKFoodCourt.DatabaseAccess.EF
     [Table("Account")]
     public partial class Account
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
-        {
-            DonHangs = new HashSet<DonHang>();
-        }
-
         public int ID { get; set; }
 
         [Required]
@@ -30,8 +24,5 @@ namespace BKFoodCourt.DatabaseAccess.EF
         public string Name { get; set; }
 
         public int TypeAccount { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }
