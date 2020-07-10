@@ -155,8 +155,8 @@ C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Syste
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.xml
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.xml
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csprojAssemblyReference.cache
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CoreCompileInputs.cache
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CopyComplete
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.dll
 C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.pdb
+C:\Users\NguyenMai\Desktop\ReportOS2\TT\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csprojAssemblyReference.cache

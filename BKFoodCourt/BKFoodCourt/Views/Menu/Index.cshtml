@@ -46,8 +46,10 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">@item.Price đồng</div>
                             </div>
                             <div class="col-auto">
-                                <br><br>
-                                <a href=@Url.Action("Detail", "Food", new { foodId = item.ID })>Xem chi tiết</a>
+                                @using (Html.BeginForm("addToCart", "Cart", new { foodId = item.ID }))
+                                {
+                                    <button type="submit" class="btn btn-success" style="font-size:18px"><i class="fa fa-cart-plus"> Thêm</i></button>
+                                }
                             </div>
                         </div>
                     </div>
@@ -55,6 +57,7 @@
             </div>
         }
         @Html.PagedListPager(Model, page => Url.Action("Index", "Menu", new { page }))
+
     }
 </div>
 
