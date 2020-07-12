@@ -1,77 +1,242 @@
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll.config
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.pdb
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe.config
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.rsp
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe.config
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.rsp
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Managed.Core.targets
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.AppContext.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Collections.Immutable.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Console.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.StackTrace.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Compression.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.Primitives.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.AccessControl.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Reflection.Metadata.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.AccessControl.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Claims.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Encoding.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Primitives.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Principal.Windows.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Text.Encoding.CodePages.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.ValueTuple.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.ReaderWriter.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XmlDocument.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.XDocument.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe.config
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.rsp
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe.config
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\EntityFramework.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\Microsoft.Web.Infrastructure.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\EntityFramework.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csprojAssemblyReference.cache
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CoreCompileInputs.cache
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CopyComplete
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.pdb
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\PagedList.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.dll
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\PagedList.xml
-E:\HK192\Thực tập công nghệ phần mền\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll.config
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.pdb
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe.config
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.rsp
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe.config
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.rsp
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.AppContext.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Console.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Compression.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Claims.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.ValueTuple.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe.config
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.rsp
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\EntityFramework.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\EntityFramework.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CopyComplete
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.pdb
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\log4net.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\PagedList.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\log4net.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\PagedList.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.xml
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\TTCNPM\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll.config
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.pdb
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe.config
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.rsp
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe.config
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.rsp
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CSharp.Core.targets
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Managed.Core.targets
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.AppContext.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Collections.Immutable.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Console.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.StackTrace.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Compression.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.AccessControl.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Reflection.Metadata.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.AccessControl.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Claims.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Principal.Windows.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Text.Encoding.CodePages.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.ValueTuple.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.ReaderWriter.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XmlDocument.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.XDocument.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe.config
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.rsp
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe.config
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\EntityFramework.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\log4net.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\Microsoft.Web.Infrastructure.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\PagedList.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\EntityFramework.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\log4net.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\PagedList.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CoreCompileInputs.cache
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CopyComplete
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.dll
+Z:\TTCNPM-tthung\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.pdb
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll.config
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\BKFoodCourt.pdb
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.exe.config
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csc.rsp
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.exe.config
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\csi.rsp
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.AppContext.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Console.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Compression.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.IO.Pipes.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Claims.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.ValueTuple.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.exe.config
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\vbc.rsp
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\EntityFramework.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\log4net.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\PagedList.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\EntityFramework.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\EntityFramework.SqlServer.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\log4net.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\PagedList.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\PagedList.Mvc.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Deployment.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Webpages.Razor.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.csproj.CopyComplete
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.dll
+C:\Users\USER\Desktop\TTCNPM-nvhuu\BKFoodCourt\BKFoodCourt\obj\Debug\BKFoodCourt.pdb

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Process";
+    Layout = "~/Views/Shared/_LayoutCook.cshtml";
+}
+
+<style>
+    .itemImg {
+        width: 8em;
+        display: inline;
+        padding-right: 1em;
+    }
+</style>
+
+@model List<BKFoodCourt.DatabaseAccess.EF.OrderDetail>
+
+@{ var tmp = Model.ElementAt(0);}
+
+<table border="1" cellpadding="2" cellspacing="2">
+    <thead>
+        <tr>
+            <th>ID Món ăn</th>
+            <th>Nóm ăn</th>
+            <th>Só lượng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.ID</th>
+                <th>
+                    <img src=@item.Food.Url1 alt="" class="itemImg" />
+                    @item.Food.Name
+                </th>
+                <th>@item.Quantily</th>
+            </tr>
+        }
+    </tbody>
+</table>
+<button><a href=@Url.Action("Finsh","Cook",new {ID=tmp.OrderID})>Thông báo món ăn đã hoàn thành</a></button>
+

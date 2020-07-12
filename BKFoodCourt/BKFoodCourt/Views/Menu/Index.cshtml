@@ -1,57 +1,11 @@
 ﻿
-@using PagedList;
-@using PagedList.Mvc;
-@using BKFoodCourt.Models
-
 @{
     ViewBag.Title = "Index";
-    if (LoginSignUpModel.State == false)
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    else
-    {
-        Layout = "~/Views/Shared/_Layout_Customer.cshtml";
-    }
-}
-
-@model IPagedList<Food>
-
-@{ ListOrder listOrder = new ListOrder();}
-    
-@section css
-{
-    <link rel="stylesheet" href="~/Assets/Order/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
     <style>
-
-        .search_input {
-            padding: 10px;
-            font-size: 17px;
-            border: 1px solid grey;
-            float: left;
-            width: 50%;
-            background: #f1f1f1;
-            border-radius: 5px;
-            margin-left: 100px;
+        .pagination-container {
+            padding-left: 50%;
         }
-
-        .search_button {
-            float: left;
-            width: 10%;
-            padding: 10px;
-            background: #585f66;
-            color: white;
-            font-size: 17px;
-            border: 1px solid grey;
-            border-left: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-            .search_button:hover {
-                background: #000000;
-            }
 
         .pagination a {
             color: black;
@@ -61,125 +15,45 @@
             transition: background-color .3s;
         }
 
-            .pagination a.active {
-                background-color: dodgerblue;
-                color: white;
-            }
+        .pagination a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
     </style>
 }
-<div id="wrapper">
-    <div class="cart-icon-top">
-    </div>
-    <div class="cart-icon-bottom">
-    </div>
-    <a href=@Url.Action("Index","Cart")>
-        <div id="checkout">
 
-            CHECKOUT
-        </div>
-    </a>
 
-    <div id="sidebar">
-        <h3>CART</h3>
 
-        <h3>CATEGORIES</h3>
-        <div class="checklist categories">
-            <ul>
-                <li><a href=""><span></span>Quầy thứ 1</a></li>
-                <li><a href=""><span></span>Quầy thứ 2</a></li>
-                <li><a href=""><span></span>Quầy thứ 3</a></li>
-            </ul>
-        </div>
-        <h3>SIZES</h3>
-        <div class="checklist sizes">
-            <ul>
-                <li><a href=""><span></span>S</a></li>
-                <li><a href=""><span></span>M</a></li>
-            </ul>
-        </div>
-    </div>
-    @using (Html.BeginForm("Index", "Menu/Index", FormMethod.Get))
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<BKFoodCourt.DatabaseAccess.EF.Food>
+<div class="row">
+    @if (Model == null || Model.Count == 0)
     {
-        @Html.TextBox("searchName", null, new { @class = "search_input", @placeholder = "Search by name..." })
-        <input type="submit" value="Search" class="search_button" />
-    }
-    <div id="grid">
-        @if (Model.Count() == 0)
-        {
-            <h2> No Result</h2>
-        }
-        else
-        {
-            foreach (var food in Model)
-            {
-
-                <div class="product">
-                    <div class="info-large">
-                        <h4>@food.Name</h4>
-                        <div class="sku">
-                            PRODUCT SKU: <strong>89356</strong>
-                        </div>
-
-                        <div class="price-big">
-                            <span>$4</span> @food.Price
-                        </div>
-                        <h3>SIZE</h3>
-                        <div class="sizes-large">
-                            <span>M</span>
-                            <span>L</span>
-                        </div>
-
-                        <button class="add-cart-large" onclick="location.href='@Url.Action("AddFood", "Menu", new { id = food.ID })'">Add To Cart</button>
-
-                    </div>
-
-                    <div class="make3D">
-                        <div class="product-front">
-                            <div class="shadow"></div>
-                            <img src="@food.Url" alt="" />
-                            <div class="image_overlay"></div>
-                            <div class="add_to_cart" onclick="location.href='@Url.Action("AddFood", "Menu", new { id = food.ID })'" >Add to cart</div>
-                            <div class="view_gallery">Description</div>
-                            <div class="stats">
-                                <div class="stats-container">
-                                    <span class="product_price">@food.Price $ </span>
-                                    <span class="product_name">@food.Name</span>
-                                    <p>Food</p>
-
-                                    <div class="product-options">
-                                        <strong>SIZES</strong>
-                                        <span>M, L</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-back">
-                            <p style="
-                               padding-left: 20px;
-                               padding-top: 50px;
-                               padding-right: 20px;">@food.Description</p>
-
-                            <div class="shadow"></div>
-
-                            <div class="flip-back">
-                                <div class="cy"></div>
-                                <div class="cx"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        }
-    </div>
-</div>
-@Html.PagedListPager(Model, page => Url.Action("Index", "Menu/Index", new { page }))
-
-@section scripts
+<h3>Không có dữ liệu.</h3> }
+else
 {
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="~/Assets/Order/script.js"></script>
-}
-
-
+foreach (var item in Model)
+{
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <img class="food-img-menu" src=@item.Url1>
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <br>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;"><a href=@Url.Action("Detail","Food",new { foodId = item.ID })>@item.Name</a></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">@item.Price đồng</div>
+                </div>
+                <div class="col-auto">
+                    <br><br>
+                    <a href=@Url.Action("Detail", "Food", new { foodId = item.ID })>Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> }
+@Html.PagedListPager(Model, page => Url.Action("Index", "Menu", new { page }))}
+</div>
 

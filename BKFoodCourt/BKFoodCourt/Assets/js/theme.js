@@ -24,3 +24,15 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+function tangSoluong() {
+    var i = document.getElementById("soLuong").nodeValue;
+    i++;
+    document.getElementById("soLuong").nodeValue = i;
+}
+function giamSoluong() {
+    var i = document.getElementById("soLuong").nodeValue;
+    i--;
+    if (i <= 0) document.getElementById("soLuong").nodeValue = 0;
+    else document.getElementById("soLuong").nodeValue = i;
+}
