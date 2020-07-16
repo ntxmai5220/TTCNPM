@@ -1833,6 +1833,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\CartSession.cs" />
     <Compile Include="Common\CommonConstant.cs" />
+    <Compile Include="Common\NotificationSession.cs" />
     <Compile Include="Common\UserSession.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -1845,6 +1846,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="DatabaseAccess\Dao\FoodDao.cs" />
+    <Compile Include="DatabaseAccess\Dao\NotificationDao.cs" />
     <Compile Include="DatabaseAccess\Dao\OrderDao.cs" />
     <Compile Include="DatabaseAccess\Dao\StatisticDao.cs" />
     <Compile Include="DatabaseAccess\Dao\UserDao.cs" />
@@ -1852,6 +1854,7 @@
     <Compile Include="DatabaseAccess\EF\BKFoodCourt.cs" />
     <Compile Include="DatabaseAccess\EF\DonHang.cs" />
     <Compile Include="DatabaseAccess\EF\Food.cs" />
+    <Compile Include="DatabaseAccess\EF\Notification.cs" />
     <Compile Include="DatabaseAccess\EF\OrderDetail.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1861,6 +1864,7 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Momo\MoMoSecurity.cs" />
     <Compile Include="Models\Momo\PaymentRequest.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\SignupModel.cs" />
     <Compile Include="Models\StatisticModel.cs" />
     <Compile Include="Models\UpdateModel.cs" />
@@ -2064,6 +2068,8 @@
     <Content Include="Views\Vendor\UpdateItem.cshtml" />
     <Content Include="Views\Vendor\AddFood.cshtml" />
     <Content Include="Views\Cook\Process.cshtml" />
+    <Content Include="Views\Customer\Notification.cshtml" />
+    <Content Include="Views\Customer\NotificationDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

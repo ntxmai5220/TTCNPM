@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using BKFoodCourt.Models
+@{
+    BKFoodCourt.Models.NotificationModel notifications = Session[BKFoodCourt.Common.CommonConstant.NOTIFICATION_SESSION] as BKFoodCourt.Models.NotificationModel;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -95,18 +99,30 @@
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">0</span>
+                                @if (notifications.check == false)
+                                {
+                                    <span class="badge badge-danger badge-counter">0</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger badge-counter">1</span>
+                                }
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Trung tâm thông báo
                                 </h6>
-                                <a class="dropdown-item d-flex align-items-center">Không có thông báo</a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Hiển thị tất cả.</a>
+                                @if (notifications.check == false)
+                                {
+                                    <a class="dropdown-item d-flex align-items-center">Không có thông báo</a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item d-flex align-items-center">Đang có đơn hàng cần thực hiện, Cook vào vào bếp.</a>
+                                }
                             </div>
                         </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -153,7 +169,6 @@
                             <span>Mail: <a href="mailto:info@bkfoodcourt.com">info@bkfoodcourt.com</a> - Phone: (+84) 123456</span>
                         </div>
                     </div>
-
                 </footer>
                 <!-- End of Footer -->
             </div>
@@ -195,6 +210,5 @@
     <script src="~/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="~/Assets/js/demo/datatables-demo.js"></script>
-
 </body>
 </html>

@@ -12,6 +12,7 @@ namespace BKFoodCourt.DatabaseAccess.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DonHang()
         {
+            Notifications = new HashSet<Notification>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
@@ -33,6 +34,9 @@ namespace BKFoodCourt.DatabaseAccess.EF
         public int State { get; set; }
 
         public virtual Account Account { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Notification> Notifications { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

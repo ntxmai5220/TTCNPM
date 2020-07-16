@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Notification";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@using BKFoodCourt.Models
+
+@{ 
+    BKFoodCourt.Models.NotificationModel notifications = Session[BKFoodCourt.Common.CommonConstant.NOTIFICATION_SESSION] as BKFoodCourt.Models.NotificationModel;
+}
+
+<div class="wrap cf">
+    <h1 class="projTitle">Thông báo</h1>
+    <div class="cart">
+        <ul class="cartWrap">
+            @for (int i = notifications.notification.Count - 1; i >= 0; i--)
+            {
+                var item = notifications.notification.ElementAt(i);
+                <a class="dropdown-item d-flex align-items-center" href=@Url.Action("NotificationDetail", "Customer", new { ID = item.ID })>
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">@item.Timer</div>
+                        @if (item.State == false)
+                        {
+                            <span class="font-weight-bold">Đơn hàng @item.DonHang.OrderCode @item.Infomation</span>
+                        }
+                        else
+                        {
+                            <span>Đơn hàng @item.DonHang.OrderCode @item.Infomation</span>
+                        }
+                    </div>
+                </a>
+            }
+        </ul>
+    </div>
+</div>
+

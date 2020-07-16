@@ -15,6 +15,7 @@ namespace BKFoodCourt.DatabaseAccess.EF
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -28,6 +29,11 @@ namespace BKFoodCourt.DatabaseAccess.EF
                 .WithRequired(e => e.Account)
                 .HasForeignKey(e => e.CustomerID)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Notifications)
+                .WithOptional(e => e.Account)
+                .HasForeignKey(e => e.CustomerID);
 
             modelBuilder.Entity<DonHang>()
                 .Property(e => e.OrderCode)

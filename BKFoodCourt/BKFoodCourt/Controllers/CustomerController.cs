@@ -13,6 +13,19 @@ namespace BKFoodCourt.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
+        public void loadNotification()
+        {
+            LoginModel user = Session[CommonConstant.USER_SESSION] as LoginModel;
+            var dao = new NotificationDao();
+            List<Notification> notifications = dao.getNotifications(user.ID);
+            Session[CommonConstant.NOTIFICATION_SESSION] = new NotificationModel();
+            NotificationModel notificationModel = Session[CommonConstant.NOTIFICATION_SESSION] as NotificationModel;
+            foreach (var item in notifications)
+            {
+                notificationModel.notification.Add(item);
+            }
+        }
+
         private bool check()
         {
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
@@ -20,6 +33,7 @@ namespace BKFoodCourt.Controllers
             {
                 return false;
             }
+            loadNotification();
             return true;
         }
 
@@ -118,6 +132,29 @@ namespace BKFoodCourt.Controllers
             var dao = new OrderDao();
             List<OrderDetail> res = dao.getInfoOrder(OrderID);
             return View(res);
+        }
+
+        public ActionResult NotificationDetail(int ID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            var Dao = new NotificationDao();
+            Notification notification = Dao.GetNotification(ID);
+            List<OrderDetail> res = dao.getInfoOrder(notification.DonHang.ID);
+            notification.State = true;
+            Dao.UpdateNotificationDao(notification);
+            return View(res);
+        }
+        public ActionResult Notification()
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
         }
     }
 }
