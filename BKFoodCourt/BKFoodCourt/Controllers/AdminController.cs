@@ -1,4 +1,6 @@
 ﻿using BKFoodCourt.Common;
+using BKFoodCourt.DatabaseAccess.Dao;
+using BKFoodCourt.DatabaseAccess.EF;
 using BKFoodCourt.Models;
 using System;
 using System.Collections.Generic;
@@ -10,60 +12,160 @@ namespace BKFoodCourt.Controllers
 {
     public class AdminController : Controller
     {
+        private bool check()
+        {
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            if (login == null || login.typeAcc != 1)
+            {
+                return false;
+            }
+            return true;
+        }
         // GET: Admin
         public ActionResult Index()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
             return View();
         }
+
+        //GET::Report
         public ActionResult Report()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
-        }
-        public ActionResult UpdateMenu()
-        {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            var dao = new OrderDao();
+            List<ListOrderModel> res = new List<ListOrderModel>();
+            List<DonHang> listOrder = new List<DonHang>();
+            listOrder = dao.getReport();
+            foreach (var item in listOrder)
             {
-                return RedirectToAction("Login", "User");
+                ListOrderModel order = new ListOrderModel();
+                order.ID = item.ID;
+                order.OrderCode = item.OrderCode;
+                order.CustomerID = item.CustomerID;
+                order.Price = item.Price;
+                order.Timer = item.Timer;
+                order.State = 0;
+                List<OrderDetail> tmp = dao.getInfoOrder(item.ID);
+                foreach (var i in tmp)
+                {
+                    order.list.Add(i.FoodID, i.Quantily);
+                }
+                res.Add(order);
             }
-            return View();
+            return View(res);
         }
+
+        //GET::Statistic
         public ActionResult Statistic()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            StatisticModel res = new StatisticModel();
+            StatisticDao dao = new StatisticDao();
+            res.NumCustomer = dao.NumCustomer();
+            res.NumFood = dao.NumFood();
+            res.NumOrderCancel = dao.NumOrderCancel();
+            res.NumOrderSuccess = dao.NumOrderSuccess();
+            return View(res);
         }
+
+        //GET::AdminInfo
         public ActionResult AdminInfo()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            return View(login);
         }
+
+        public ActionResult UpdateInfo()
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            UpdateModel update = new UpdateModel();
+            update.Name = login.Name;
+            update.Email = login.Email;
+            return View(update);
+        }
+
+        public ActionResult UpdateInfoAction(UpdateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.NewPassword != null)
+                    model.NewPassword = model.NewPassword.Trim();
+                if (model.RetypePassword != null)
+                    model.RetypePassword = model.RetypePassword.Trim();
+                model.OldPassword = model.OldPassword.Trim();
+                if (model.Name != null)
+                    model.Name = model.Name.Trim();
+                if (model.NewPassword == model.RetypePassword)
+                {
+                    UserDao dao = new UserDao();
+                    Account acc = new Account();
+                    acc.Name = model.Name;
+                    acc.PassWord = model.NewPassword;
+                    acc.Email = model.Email;
+                    int res = dao.UpdateInfo(acc, model.OldPassword);
+                    if (res == 1)
+                    {
+                        LoginModel user = Session[CommonConstant.USER_SESSION] as LoginModel;
+                        user.Name = acc.Name;
+                        return RedirectToAction("AdminInfo");
+                    }
+                    if (res == 0)
+                    {
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
+                    }
+                    if (res == -1)
+                    {
+                        ModelState.AddModelError("", "Lỗi cập nhật!");
+                    }
+                }
+            }
+            return View("UpdateInfo");
+        }
+
+        //GET::Create Account
         public ActionResult CreateAccount()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 1)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
             return View();
         }
+
+        public ActionResult CreateAccountAction(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.TypeAccount = 3;
+                UserDao dao = new UserDao();
+                if (dao.InsertAcc(model) > 0)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                    ModelState.AddModelError("", "Lỗi!");
+            }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
+            return View("CreateAccount","Admin");
+        }
+
     }
 }
