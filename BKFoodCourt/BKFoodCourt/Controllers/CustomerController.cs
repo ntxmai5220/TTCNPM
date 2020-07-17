@@ -1,4 +1,6 @@
 ﻿using BKFoodCourt.Common;
+using BKFoodCourt.DatabaseAccess.Dao;
+using BKFoodCourt.DatabaseAccess.EF;
 using BKFoodCourt.Models;
 using System;
 using System.Collections.Generic;
@@ -11,10 +13,19 @@ namespace BKFoodCourt.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
-        public ActionResult Index()
+        private bool check()
         {
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             if (login == null || login.typeAcc != 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public ActionResult Index()
+        {
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
@@ -22,8 +33,7 @@ namespace BKFoodCourt.Controllers
         }
         public ActionResult Contact()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 0)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
@@ -31,12 +41,83 @@ namespace BKFoodCourt.Controllers
         }
         public ActionResult UserInfo()
         {
-            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
-            if (login == null || login.typeAcc != 0)
+            if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            return View(login);
+        }
+        public ActionResult UpdateInfo()
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            UpdateModel update = new UpdateModel();
+            update.Name = login.Name;
+            update.Email = login.Email;
+            return View(update);
+        }
+        public ActionResult UpdateInfoAction(UpdateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.NewPassword != null)
+                    model.NewPassword = model.NewPassword.Trim();
+                if (model.RetypePassword != null)
+                    model.RetypePassword = model.RetypePassword.Trim();
+                model.OldPassword = model.OldPassword.Trim();
+                if (model.Name != null)
+                    model.Name = model.Name.Trim();
+                if (model.NewPassword == model.RetypePassword)
+                {
+                    UserDao dao = new UserDao();
+                    Account acc = new Account();
+                    acc.Name = model.Name;
+                    acc.PassWord = model.NewPassword;
+                    acc.Email = model.Email;
+                    int res = dao.UpdateInfo(acc, model.OldPassword);
+                    if (res == 1)
+                    {
+                        LoginModel user = Session[CommonConstant.USER_SESSION] as LoginModel;
+                        user.Name = acc.Name;
+                        return RedirectToAction("UserInfo");
+                    }
+                    if (res == 0)
+                    {
+                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                    }
+                    if (res == -1)
+                    {
+                        ModelState.AddModelError("", "Lỗi cập nhật!");
+                    }
+                }
+            }
+            return RedirectToAction("UpdateInfo");
+        }
+
+        public ActionResult Order(int CustomerID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            List<DonHang> res = dao.getDonHangOfCustomer(CustomerID);
+            return View(res);
+        }
+
+        public ActionResult OrderDetail(int OrderID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            List<OrderDetail> res = dao.getInfoOrder(OrderID);
+            return View(res);
         }
     }
 }

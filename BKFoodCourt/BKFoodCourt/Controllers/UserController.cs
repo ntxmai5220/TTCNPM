@@ -28,12 +28,14 @@ namespace BKFoodCourt.Controllers
                 var result = dao.Login(model.Email, model.PassWord);
                 var user = dao.GetInfo(model.Email);
                 var userSession = new LoginModel();
+                Session.RemoveAll();
                 switch (result)
                 {
                     case 0: //Customer
                         userSession.Email = user.Email;
                         userSession.typeAcc = 0;
                         userSession.Name = user.Name;
+                        userSession.ID = user.ID;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
 
                         return RedirectToAction("Index", "Customer");
@@ -41,6 +43,7 @@ namespace BKFoodCourt.Controllers
                         userSession.Email = user.Email;
                         userSession.typeAcc = 1;
                         userSession.Name = user.Name;
+                        userSession.ID = user.ID;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
                         return RedirectToAction("Index", "Admin");
                     case 2: //Cook
@@ -48,7 +51,15 @@ namespace BKFoodCourt.Controllers
                         userSession.typeAcc = 2;
                         userSession.Name = user.Name;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
+                        userSession.ID = user.ID;
                         return RedirectToAction("Index", "Cook");
+                    case 3:
+                        userSession.Email = user.Email;
+                        userSession.typeAcc = 3;
+                        userSession.Name = user.Name;
+                        Session.Add(CommonConstant.USER_SESSION, userSession);
+                        userSession.ID = user.ID;
+                        return RedirectToAction("Index", "Vendor");
                     default:
                         ModelState.AddModelError("", "Sai email hoặc mật khẩu.");
                         return View("Login");
@@ -103,5 +114,6 @@ namespace BKFoodCourt.Controllers
             Session.RemoveAll();
             return RedirectToAction("Index", "Home");
         }
+
     }
 }

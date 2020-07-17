@@ -154,6 +154,10 @@
                                     <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Thông tin tài khoản
                                 </a>
+                                <a class="dropdown-item" href=@Url.Action("Order","Customer",new { CustomerID = user.ID })>
+                                    <i class="fa fa-shopping-cart fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Đơn hàng của tôi
+                                </a>
                                 <a class="dropdown-item" href=@Url.Action("Logout","User")>
                                     <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Đăng xuất

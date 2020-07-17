@@ -1810,7 +1810,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
-    <Content Include="Views\Shared\_LayoutManager.cshtml" />
     <Content Include="Views\Shared\_LayoutNotLogin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -1823,7 +1822,6 @@
     <Content Include="Views\Food\Detail.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Report.cshtml" />
-    <Content Include="Views\Admin\UpdateMenu.cshtml" />
     <Content Include="Views\Admin\Statistic.cshtml" />
     <Content Include="Views\Admin\AdminInfo.cshtml" />
     <Content Include="Views\Admin\CreateAccount.cshtml" />
@@ -1843,21 +1841,29 @@
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\MomoController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="DatabaseAccess\Dao\FoodDao.cs" />
+    <Compile Include="DatabaseAccess\Dao\OrderDao.cs" />
+    <Compile Include="DatabaseAccess\Dao\StatisticDao.cs" />
     <Compile Include="DatabaseAccess\Dao\UserDao.cs" />
     <Compile Include="DatabaseAccess\EF\Account.cs" />
     <Compile Include="DatabaseAccess\EF\BKFoodCourt.cs" />
+    <Compile Include="DatabaseAccess\EF\DonHang.cs" />
     <Compile Include="DatabaseAccess\EF\Food.cs" />
+    <Compile Include="DatabaseAccess\EF\OrderDetail.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\ListOrderModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Momo\MoMoSecurity.cs" />
     <Compile Include="Models\Momo\PaymentRequest.cs" />
     <Compile Include="Models\SignupModel.cs" />
+    <Compile Include="Models\StatisticModel.cs" />
+    <Compile Include="Models\UpdateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2040,6 +2046,24 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutCook.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Customer\Order.cshtml" />
+    <Content Include="Views\Customer\OrderDetail.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Customer\UpdateInfo.cshtml" />
+    <Content Include="Views\Admin\UpdateInfo.cshtml" />
+    <Content Include="Views\Shared\_LayoutVendor.cshtml" />
+    <Content Include="Views\Shared\_LayoutManager.cshtml" />
+    <Content Include="Views\Vendor\Index.cshtml" />
+    <Content Include="Views\Vendor\CreateAccount.cshtml" />
+    <Content Include="Views\Vendor\Report.cshtml" />
+    <Content Include="Views\Vendor\Statistic.cshtml" />
+    <Content Include="Views\Vendor\UpdateInfo.cshtml" />
+    <Content Include="Views\Vendor\UpdateMenu.cshtml" />
+    <Content Include="Views\Vendor\VendorInfo.cshtml" />
+    <Content Include="Views\Cook\UpdateInfo.cshtml" />
+    <Content Include="Views\Vendor\UpdateItem.cshtml" />
+    <Content Include="Views\Vendor\AddFood.cshtml" />
+    <Content Include="Views\Cook\Process.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2049,7 +2073,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Momo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

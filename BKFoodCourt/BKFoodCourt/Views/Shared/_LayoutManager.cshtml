@@ -55,15 +55,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=@Url.Action("UpdateMenu","Admin")>
-                    <i class="fa fa-edit "></i>
-                    <span>Cập nhật menu</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href=@Url.Action("CreateAccount","Admin")>
                     <i class="fa fa-plus "></i>
-                    <span>Tạo tài khoản</span>
+                    <span>Tạo tài khoản Vendor</span>
                 </a>
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -131,14 +125,14 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @{
                                     BKFoodCourt.Models.LoginModel user = Session[BKFoodCourt.Common.CommonConstant.USER_SESSION] as BKFoodCourt.Models.LoginModel;
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Xin chào Admin, @user.Name</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Xin chào Manager, @user.Name</span>
                                 }
                                 <!-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
                                 <i class="fa fa-user"></i>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href=@Url.Action("UserInfo","Admin")>
+                                <a class="dropdown-item" href=@Url.Action("AdminInfo","Admin")>
                                     <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Thông tin
                                 </a>
