@@ -3,105 +3,98 @@
     ViewBag.Title = "Report";
     Layout = "~/Views/Shared/_LayoutVendor.cshtml";
 }
+
+@model List<BKFoodCourt.Models.ListOrderModel>
+
 <h1 class="h3 mb-2 text-gray-800">Báo cáo</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Thống kê theo từng ngày</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách đơn hàng đã hoàn thành</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Vendor</th>
-                        <th>Ngày</th>
-                        <th>Tổng số đơn hàng</th>
-                        <th>Số đơn lỗi</th>
-                        <th>Tiền thu về</th>
-                        <th>Tiền vốn</th>
-                        <th>Chi tiết</th>
+                        <td rowspan="2">ID đơn hàng</td>
+                        <td rowspan="2">ID Khách hàng</td>
+                        <td rowspan="2">Thời gian Order</td>
+                        <td colspan="2">Đơn hàng</td>
+                        <td rowspan="2">Tổng đơn hàng</td>
+                        <td rowspan="2">Trạng thái</td>
+                    </tr>
+                    <tr>
+                        <td>Tên món ăn</td>
+                        <td>Số lượng</td>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Vendor</th>
-                        <th>Ngày</th>
-                        <th>Tổng số đơn hàng</th>
-                        <th>Số đơn lỗi</th>
-                        <th>Tiền thu về</th>
-                        <th>Tiền vốn</th>
-                        <th>Chi tiết</th>
+                        <td rowspan="2">ID đơn hàng</td>
+                        <td rowspan="2">ID Khách hàng</td>
+                        <td rowspan="2">Thời gian Order</td>
+                        <td colspan="2">Đơn hàng</td>
+                        <td rowspan="2">Tổng đơn hàng</td>
+                        <td rowspan="2">Trạng thái</td>
+                    </tr>
+                    <tr>
+                        <td>Tên món ăn</td>
+                        <td>Số lượng</td>
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                    </tr>
-                    <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td>$162,700</td>
-                    </tr>
-                    <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td>$372,000</td>
-                    </tr>
-                    <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                        <td>$137,500</td>
-                    </tr>
-                    <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td>$327,900</td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        if (item.list.Count == 1)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.CustomerID</td>
+                                <td>@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</td>
+                                <td>@item.getFood(item.list.ElementAt(0).Key).Name</td>
+                                <td>@item.list.ElementAt(0).Value</td>
+                                <td>@item.Price</td>
+                                @if (item.State == 1)
+                                {
+                                    <td rowspan="@item.list.Count">Đã Hoàn Thành</td>
+                                }
+                                else if (item.State == 2)
+                                {
+                                    <td rowspan="@item.list.Count">Đã Hủy </td>
+                                }
+
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td rowspan="@item.list.Count">@item.ID</td>
+                                <td rowspan="@item.list.Count">@item.CustomerID</td>
+                                <td rowspan="@item.list.Count">@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</td>
+                                <td>@item.getFood(item.list.ElementAt(0).Key).Name</td>
+                                <td>@item.list.ElementAt(0).Value</td>
+                                <td rowspan="@item.list.Count">@item.Price</td>
+                                @if (item.State == 1)
+                                {
+                                    <td rowspan="@item.list.Count">Đã Hoàn Thành</td>
+                                }
+                                else if (item.State == 2)
+                                {
+                                    <td rowspan="@item.list.Count">Đã Hủy </td>
+                                }
+                            </tr>
+                            for (int i = 1; i < item.list.Count; i++)
+                            {
+                                <tr>
+                                    <td>@item.getFood(item.list.ElementAt(i).Key).Name</td>
+                                    <td>@item.list.ElementAt(i).Value</td>
+                                </tr>
+                            }
+                        }
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-

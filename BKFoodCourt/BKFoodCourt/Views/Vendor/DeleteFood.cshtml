@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "UpdateMenu";
+    ViewBag.Title = "DeleteFood";
     Layout = "~/Views/Shared/_LayoutVendor.cshtml";
     <link href="~/Assets/css/slideshow.css" rel="stylesheet">
     <style>
@@ -16,12 +16,13 @@
             transition: background-color .3s;
         }
 
-        .pagination a.active {
-            background-color: dodgerblue;
-            color: white;
-        }
+            .pagination a.active {
+                background-color: dodgerblue;
+                color: white;
+            }
     </style>
 }
+
 @using PagedList;
 @using PagedList.Mvc;
 
@@ -30,15 +31,15 @@
 @using (Html.BeginForm("UpdateMenu", "Vendor", FormMethod.Get, new { @class = "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" }))
 {
     <div class="input-group">
-        @Html.TextBox("search", null, new { @class = "form-control border-0", @style="background-color:white", @placeholder = "Tìm kiếm món ăn..." })
+        @Html.TextBox("search", null, new { @class = "form-control border-0", @style = "background-color:white", @placeholder = "Tìm kiếm món ăn..." })
         <div class="input-group-append">
             <button class="btn btn-primary" type="submit">
                 <i class="fa fa-search fa-sm"></i>
             </button>
         </div>
-    </div>
-}
-<br /><br />
+    </div>}
+<br />
+<br />
 <div class="row">
     @if (Model == null || Model.Count == 0)
     {
@@ -59,14 +60,12 @@
                             </div>
                             <div class="col-auto">
                                 <br><br>
-                                <a href=@Url.Action("UpdateItem", "Vendor", new { foodId = item.ID })>Chỉnh sửa</a>
+                                <a href=@Url.Action("DeleteFoodAction", "Vendor", new { id = item.ID })>Xoá</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div> }
-        @Html.PagedListPager(Model, page => Url.Action("UpdateMenu", "Vendor", new { page }))}
+        @Html.PagedListPager(Model, page => Url.Action("DeleteFood", "Vendor", new { page }))}
 </div>
-
-
 

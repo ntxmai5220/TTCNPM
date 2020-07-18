@@ -31,6 +31,8 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
+
+        //GET:Update
         public ActionResult UpdateMenu(string search, int? page)
         {
             if (!check())
@@ -41,6 +43,7 @@ namespace BKFoodCourt.Controllers
             List<Food> foodList = dao.search(search);
             return View(foodList.ToPagedList(page ?? 1, 8));
         }
+
         public ActionResult UpdateItem(int foodId)
         {
             if (!check())
@@ -51,6 +54,7 @@ namespace BKFoodCourt.Controllers
             Food food = dao.getById(foodId);
             return View(food);
         }
+
         public ActionResult UpdateItemAction(Food model)
         {
             FoodDao dao = new FoodDao();
@@ -66,12 +70,11 @@ namespace BKFoodCourt.Controllers
                 }
             }
             else
-            {
-                ModelState.AddModelError("", "Vui lòng điền đủ và chính xác các trường.");
-            }
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return View("UpdateItem", new { foodId = model.ID });
 
         }
+
         public ActionResult AddFood()
         {
             if (!check())
@@ -80,6 +83,7 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
+
         public ActionResult AddFoodAction(Food food)
         {
             FoodDao dao = new FoodDao();
@@ -95,11 +99,32 @@ namespace BKFoodCourt.Controllers
                 }
             }
             else
-            {
-                ModelState.AddModelError("", "");
-            }
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return View("AddFood");
         }
+
+        public ActionResult DeleteFood(string search, int? page)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new FoodDao();
+            List<Food> foodList = dao.search(search);
+            return View(foodList.ToPagedList(page ?? 1, 8));
+        }
+
+        public ActionResult DeleteFoodAction(int id)
+        {
+            var dao = new FoodDao();
+            if (dao.Remove(dao.getById(id)))
+            {
+                return RedirectToAction("DeleteFood");
+            }
+            else
+                return RedirectToAction("DeleteFood");
+        }
+
         public ActionResult VendorInfo()
         {
             if (!check())
@@ -109,6 +134,7 @@ namespace BKFoodCourt.Controllers
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             return View(login);
         }
+
         public ActionResult CreateAccount()
         {
             if (!check())
@@ -117,6 +143,7 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
+
         public ActionResult CreateAccountAction(Account model)
         {
             if (ModelState.IsValid)
@@ -133,25 +160,54 @@ namespace BKFoodCourt.Controllers
                 }
             }
             else
-                ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
-            return View("CreateAccount","Vendor");
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
+            return View("CreateAccount");
         }
+
         public ActionResult Report()
         {
             if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            var dao = new OrderDao();
+            List<ListOrderModel> res = new List<ListOrderModel>();
+            List<DonHang> listOrder = new List<DonHang>();
+            listOrder = dao.getOrderFinsh();
+            foreach (var item in listOrder)
+            {
+                ListOrderModel order = new ListOrderModel();
+                order.ID = item.ID;
+                order.OrderCode = item.OrderCode;
+                order.CustomerID = item.CustomerID;
+                order.Price = item.Price;
+                order.Timer = item.Timer;
+                order.State = item.State;
+                List<OrderDetail> tmp = dao.getInfoOrder(item.ID);
+                foreach (var i in tmp)
+                {
+                    order.list.Add(i.FoodID, i.Quantily);
+                }
+                res.Add(order);
+            }
+            return View(res);
         }
+
         public ActionResult Statistic()
         {
             if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            StatisticModel res = new StatisticModel();
+            StatisticDao dao = new StatisticDao();
+            res.NumCustomerOrder = dao.NumCustomerOrder();
+            res.NumFoodOrder = dao.NumFoodOrder();
+            res.NumOrder = dao.NumOrder();
+            res.listFoodOrder = dao.getListFoodOrder();
+            return View(res);
         }
+
         public ActionResult UpdateInfo()
         {
             if (!check())
@@ -164,6 +220,7 @@ namespace BKFoodCourt.Controllers
             update.Email = login.Email;
             return View(update);
         }
+
         public ActionResult UpdateInfoAction(UpdateModel model)
         {
             if (ModelState.IsValid)
@@ -191,7 +248,7 @@ namespace BKFoodCourt.Controllers
                     }
                     if (res == 0)
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
                     }
                     if (res == -1)
                     {
@@ -199,6 +256,8 @@ namespace BKFoodCourt.Controllers
                     }
                 }
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return RedirectToAction("UpdateInfo");
         }
     }

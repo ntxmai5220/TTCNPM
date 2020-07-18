@@ -13,6 +13,22 @@ namespace BKFoodCourt.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
+        public void loadNotification()
+        {
+            LoginModel user = Session[CommonConstant.USER_SESSION] as LoginModel;
+            var dao = new NotificationDao();
+            List<Notification> notifications = dao.getNotifications(user.ID);
+            NotificationModel notificationModel = new NotificationModel();
+            if (notifications != null)
+            {
+                foreach (var item in notifications)
+                {
+                    notificationModel.notification.Add(item);
+                }
+            }
+            Session.Add(CommonConstant.NOTIFICATION_SESSION, notificationModel);
+        }
+
         private bool check()
         {
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
@@ -20,6 +36,7 @@ namespace BKFoodCourt.Controllers
             {
                 return false;
             }
+            loadNotification();
             return true;
         }
 
@@ -87,7 +104,7 @@ namespace BKFoodCourt.Controllers
                     }
                     if (res == 0)
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
                     }
                     if (res == -1)
                     {
@@ -95,6 +112,8 @@ namespace BKFoodCourt.Controllers
                     }
                 }
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return RedirectToAction("UpdateInfo");
         }
 
@@ -118,6 +137,29 @@ namespace BKFoodCourt.Controllers
             var dao = new OrderDao();
             List<OrderDetail> res = dao.getInfoOrder(OrderID);
             return View(res);
+        }
+
+        public ActionResult NotificationDetail(int ID)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new OrderDao();
+            var Dao = new NotificationDao();
+            Notification notification = Dao.GetNotification(ID);
+            List<OrderDetail> res = dao.getInfoOrder(notification.DonHang.ID);
+            notification.State = true;
+            Dao.UpdateNotificationDao(notification);
+            return View(res);
+        }
+        public ActionResult Notification()
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
         }
     }
 }

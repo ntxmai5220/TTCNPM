@@ -12,9 +12,22 @@ namespace BKFoodCourt.Controllers
 {
     public class CartController : Controller
     {
+        private bool check()
+        {
+            LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
+            if (login == null || login.typeAcc != 0)
+            {
+                return false;
+            }
+            return true;
+        }
         // GET: Cart
         public ActionResult Index()
         {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
             return View();
         }
         public ActionResult addToCart(int foodId)
@@ -47,7 +60,7 @@ namespace BKFoodCourt.Controllers
             tongTien();
             return RedirectToAction("Index", "Cart");
         }
-        public void tongTien()
+        private void tongTien()
         {
             if (Session[CommonConstant.CART_SESSION] != null)
             {
@@ -111,6 +124,7 @@ namespace BKFoodCourt.Controllers
 
         public ActionResult Payment(FormCollection form)
         {
+
             int state = 0;
             bool ready = false;
             if (form["TypePayment"]==null)
