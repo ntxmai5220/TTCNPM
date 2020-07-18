@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Order";
+    ViewBag.Title = "Đơn hàng của tôi";
     Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
@@ -9,9 +9,6 @@
 <h1 class="h3 mb-2 text-gray-800">Đơn hàng của bạn</h1>
 
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách đơn hàng đã hoàn thành</h6>
-    </div>
     <div class="card-body">
         @if (Model == null || Model.Count == 0)
         {

@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\cart.css" />
     <Content Include="Assets\css\sb-admin-2.css" />
     <Content Include="Assets\css\sb-admin-2.min.css" />
     <Content Include="Assets\css\slideshow.css" />
@@ -1808,7 +1809,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
     <Content Include="Views\Shared\_LayoutNotLogin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -2070,6 +2073,9 @@
     <Content Include="Views\Cook\Process.cshtml" />
     <Content Include="Views\Customer\Notification.cshtml" />
     <Content Include="Views\Customer\NotificationDetail.cshtml" />
+    <Content Include="Views\Admin\ReportDetail.cshtml" />
+    <Content Include="Views\Vendor\ReportDetail.cshtml" />
+    <Content Include="Views\Vendor\DeleteFood.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

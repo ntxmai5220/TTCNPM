@@ -47,7 +47,8 @@ namespace BKFoodCourt.Controllers
             tongTien();
             return RedirectToAction("Index", "Cart");
         }
-        public void tongTien()
+
+        private void tongTien()
         {
             if (Session[CommonConstant.CART_SESSION] != null)
             {

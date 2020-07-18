@@ -35,7 +35,8 @@ namespace BKFoodCourt.DatabaseAccess.Dao
             return db.DonHangs.Where(x => x.State == 2).ToList().Count;
         }
 
-        public int NumCustomerOrder()
+        //Số lượng món đã được order
+        public int NumFoodOrder()
         {
             List<int> check = new List<int>();
             var dao = new OrderDao();
@@ -54,7 +55,8 @@ namespace BKFoodCourt.DatabaseAccess.Dao
             return check.Count;
         }
 
-        public int NumFoodOrder()
+        //Số lượng khách hàng đã đặt hàng
+        public int NumCustomerOrder()
         {
             List<int> check = new List<int>();
             var dao = new OrderDao();
@@ -69,11 +71,13 @@ namespace BKFoodCourt.DatabaseAccess.Dao
             return check.Count;
         }
 
+        //Số lượng đơn hàng đã đặt
         public int NumOrder()
         {
             List<DonHang> list = db.DonHangs.ToList();
             return list.Count;
         }
+
         public Dictionary<Food,int> getListFoodOrder()
         {
             var dao = new OrderDao();

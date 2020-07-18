@@ -28,7 +28,7 @@ namespace BKFoodCourt.DatabaseAccess.EF
 
         public int Price { get; set; }
 
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime Timer { get; set; }
 
         public int State { get; set; }

@@ -172,7 +172,7 @@ namespace BKFoodCourt.Controllers
                     }
                     if (res == 0)
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
                     }
                     if (res == -1)
                     {

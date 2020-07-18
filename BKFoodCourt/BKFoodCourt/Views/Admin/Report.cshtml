@@ -1,84 +1,53 @@
 ﻿
 @{
-    ViewBag.Title = "Report";
+    ViewBag.Title = "Báo cáo";
     Layout = "~/Views/Shared/_LayoutManager.cshtml";
 }
-@model List<BKFoodCourt.Models.ListOrderModel>
 
-<h1 class="h3 mb-2 text-gray-800">Báo cáo</h1>
+@model List<BKFoodCourt.DatabaseAccess.EF.DonHang>
+
 <!-- DataTales Example -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách đơn hàng đã hoàn thành</h6>
+@if (Model == null || Model.Count == 0)
+{
+    <h6 class="m-0 font-weight-bold text-primary">Không có đơn hàng</h6>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Mã đơn hàng</th>
+                    <th>ID khách hàng</th>
+                    <th>Ngày mua</th>
+                    <th>Đơn hàng</th>
+                    <th>Tổng tiền</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Mã đơn hàng</th>
+                    <th>ID khách hàng</th>
+                    <th>Ngày mua</th>
+                    <th>Đơn hàng</th>
+                    <th>Tổng tiền</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.OrderCode</th>
+                        <th>@item.CustomerID</th>
+                        <th>@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</th>
+                        <th>@item.NumFood món ăn</th>
+                        <th>@item.Price</th>
+                        <th><a href=@Url.Action("ReportDetail", "Admin", new { OrderID = item.ID })>Xem chi tiết</a></th>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <td rowspan="2">ID đơn hàng</td>
-                        <td rowspan="2">ID Khách hàng</td>
-                        <td rowspan="2">Thời gian Order</td>
-                        <td rowspan="2">ID Vendor</td>
-                        <td colspan="2">Đơn hàng</td>
-                        <td rowspan="2">Tổng đơn hàng</td>
-                    </tr>
-                    <tr>
-                        <td>Tên món ăn</td>
-                        <td>Số lượng</td>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <td rowspan="2">ID đơn hàng</td>
-                        <td rowspan="2">ID Khách hàng</td>
-                        <td rowspan="2">Thời gian Order</td>
-                        <td rowspan="2">ID Vendor</td>
-                        <td colspan="2">Đơn hàng</td>
-                        <td rowspan="2">Tổng đơn hàng</td>
-                    </tr>
-                    <tr>
-                        <td>Tên món ăn</td>
-                        <td>Số lượng</td>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        if (item.list.Count == 1)
-                        {
-                            <tr>
-                                <td>@item.ID</td>
-                                <td>@item.CustomerID</td>
-                                <td>@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</td>
-                                <td>1</td>
-                                <td>@item.getFood(item.list.ElementAt(0).Key).Name</td>
-                                <td>@item.list.ElementAt(0).Value</td>
-                                <td>@item.Price</td>
-                            </tr>
-                        }
-                        else
-                        {
-                            <tr>
-                                <td rowspan="@item.list.Count">@item.ID</td>
-                                <td rowspan="@item.list.Count">@item.CustomerID</td>
-                                <td rowspan="@item.list.Count">@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</td>
-                                <td rowspan="@item.list.Count">1</td>
-                                <td>@item.getFood(item.list.ElementAt(0).Key).Name</td>
-                                <td>@item.list.ElementAt(0).Value</td>
-                                <td rowspan="@item.list.Count">@item.Price</td>
-                            </tr>
-                            for (int i = 1; i < item.list.Count; i++)
-                            {
-                                <tr>
-                                    <td>@item.getFood(item.list.ElementAt(i).Key).Name</td>
-                                    <td>@item.list.ElementAt(i).Value</td>
-                                </tr>
-                            }
-                        }
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+}

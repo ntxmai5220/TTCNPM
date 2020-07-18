@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "OrderList";
+    ViewBag.Title = "Đơn hàng";
     Layout = "~/Views/Shared/_LayoutCook.cshtml";
 }
 
@@ -55,7 +55,7 @@
                                 <td>
                                     <ul>
                                         <li><a href=@Url.Action("Cancel","Cook",new { ID = item.ID })>Hủy đơn hàng</a></li>
-                                        <li><a href=@Url.Action("Process","Cool")>Nhận đơn hàng</a></li>
+                                        <li><a href=@Url.Action("Process","Cook",new { ID = item.ID })>Nhận đơn hàng</a></li>
                                     </ul>
                                 </td>
                             </tr>
