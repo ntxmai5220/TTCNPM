@@ -1,4 +1,19 @@
 ﻿@using BKFoodCourt.Models
+@{
+    BKFoodCourt.Models.NotificationModel notifications = Session[BKFoodCourt.Common.CommonConstant.NOTIFICATION_SESSION] as BKFoodCourt.Models.NotificationModel;
+    int Count = 0;
+    if (notifications != null)
+    {
+        foreach (var item in notifications.notification)
+        {
+            if (item.State == false)
+            {
+                Count++;
+            }
+        }
+    }
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,18 +140,56 @@
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">0</span>
+                                @{
+                                    if (Count <= 3)
+                                    {
+                                        <span class="badge badge-danger badge-counter">@Count</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-danger badge-counter">3+</span>
+                                    }
+                                }
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Trung tâm thông báo
                                 </h6>
-                                <a class="dropdown-item d-flex align-items-center">Không có thông báo</a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Hiển thị tất cả.</a>
+                                @{ if (notifications == null || notifications.notification.Count == 0)
+                                    {
+                                        <a class="dropdown-item d-flex align-items-center">Không có thông báo</a>
+                                    }
+                                    else
+                                    {
+                                        int index = notifications.notification.Count - 1;
+                                        int i = 0;
+                                        while (i < 3 && index >= 0)
+                                        {
+                                            var item = notifications.notification.ElementAt(index);
+                                            index--;
+                                            i++;
+                                            <a class="dropdown-item d-flex align-items-center" href=@Url.Action("NotificationDetail", "Customer", new { ID = item.ID })>
+                                                <div class="mr-3">
+                                                    <div class="icon-circle bg-primary">
+                                                        <i class="fas fa-file-alt text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="small text-gray-500">@item.Timer</div>
+                                                    @if (item.State == false)
+                                                    {
+                                                        <span class="font-weight-bold">Đơn hàng @item.DonHang.OrderCode @item.Infomation</span>
+                                                    }
+                                                    Đơn hàng @item.DonHang.OrderCode @item.Infomation
+                                                </div>
+                                            </a>
+                                        }
+                                    }
+                                }
+                                <a class="dropdown-item text-center small text-gray-500" href=@Url.Action("Notification", "Customer")>Hiển thị tất cả.</a>
                             </div>
                         </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -187,7 +240,6 @@
                             <span>Mail: <a href="mailto:info@bkfoodcourt.com">info@bkfoodcourt.com</a> - Phone: (+84) 123456</span>
                         </div>
                     </div>
-
                 </footer>
                 <!-- End of Footer -->
             </div>

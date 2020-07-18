@@ -93,6 +93,7 @@ namespace BKFoodCourt.Controllers
 
             AddOrder();
             AddOrderDetail();
+            Session.Remove(CommonConstant.CART_SESSION);
             return RedirectToAction("Index", "Cart");
         }
 
@@ -113,6 +114,7 @@ namespace BKFoodCourt.Controllers
 
             AddOrder();
             AddOrderDetail();
+            Session.Remove(CommonConstant.CART_SESSION);
             return RedirectToAction("Index", "Payment");
         }
 
@@ -139,7 +141,7 @@ namespace BKFoodCourt.Controllers
             item.CustomerID = loginModel.ID;
             item.Price = (int)tongTien();
             item.Timer = DateTime.Now;
-            item.State = false;
+            item.State = 0;
             dao.AddOrder(item);
         }
 

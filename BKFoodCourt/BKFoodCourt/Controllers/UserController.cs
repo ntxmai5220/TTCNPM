@@ -35,6 +35,7 @@ namespace BKFoodCourt.Controllers
                         userSession.Email = user.Email;
                         userSession.typeAcc = 0;
                         userSession.Name = user.Name;
+                        userSession.ID = user.ID;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
 
                         return RedirectToAction("Index", "Customer");
@@ -42,6 +43,7 @@ namespace BKFoodCourt.Controllers
                         userSession.Email = user.Email;
                         userSession.typeAcc = 1;
                         userSession.Name = user.Name;
+                        userSession.ID = user.ID;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
                         return RedirectToAction("Index", "Admin");
                     case 2: //Cook
@@ -49,18 +51,22 @@ namespace BKFoodCourt.Controllers
                         userSession.typeAcc = 2;
                         userSession.Name = user.Name;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
+                        userSession.ID = user.ID;
                         return RedirectToAction("Index", "Cook");
                     case 3:
                         userSession.Email = user.Email;
                         userSession.typeAcc = 3;
                         userSession.Name = user.Name;
                         Session.Add(CommonConstant.USER_SESSION, userSession);
+                        userSession.ID = user.ID;
                         return RedirectToAction("Index", "Vendor");
                     default:
                         ModelState.AddModelError("", "Sai email hoặc mật khẩu.");
                         return View("Login");
                 }
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return View("Login");
 
 
@@ -100,8 +106,9 @@ namespace BKFoodCourt.Controllers
                 {
                     ModelState.AddModelError("", "Nhập lại mật khẩu không đúng.");
                 }
-
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return View("Signup");
         }
 

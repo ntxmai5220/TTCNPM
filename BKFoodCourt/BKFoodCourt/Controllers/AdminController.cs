@@ -30,22 +30,54 @@ namespace BKFoodCourt.Controllers
             }
             return View();
         }
+
+        //GET::Report
         public ActionResult Report()
         {
             if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            var dao = new OrderDao();
+            List<ListOrderModel> res = new List<ListOrderModel>();
+            List<DonHang> listOrder = new List<DonHang>();
+            listOrder = dao.getReport();
+            foreach (var item in listOrder)
+            {
+                ListOrderModel order = new ListOrderModel();
+                order.ID = item.ID;
+                order.OrderCode = item.OrderCode;
+                order.CustomerID = item.CustomerID;
+                order.Price = item.Price;
+                order.Timer = item.Timer;
+                order.State = 0;
+                List<OrderDetail> tmp = dao.getInfoOrder(item.ID);
+                foreach (var i in tmp)
+                {
+                    order.list.Add(i.FoodID, i.Quantily);
+                }
+                res.Add(order);
+            }
+            return View(res);
         }
+
+        //GET::Statistic
         public ActionResult Statistic()
         {
             if (!check())
             {
                 return RedirectToAction("Login", "User");
             }
-            return View();
+            StatisticModel res = new StatisticModel();
+            StatisticDao dao = new StatisticDao();
+            res.NumCustomer = dao.NumCustomer();
+            res.NumFood = dao.NumFood();
+            res.NumOrderCancel = dao.NumOrderCancel();
+            res.NumOrderSuccess = dao.NumOrderSuccess();
+            return View(res);
         }
+
+        //GET::AdminInfo
         public ActionResult AdminInfo()
         {
             if (!check())
@@ -55,31 +87,7 @@ namespace BKFoodCourt.Controllers
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
             return View(login);
         }
-        public ActionResult CreateAccount()
-        {
-            if (!check())
-            {
-                return RedirectToAction("Login", "User");
-            }
-            return View();
-        }
-        public ActionResult CreateAccountAction(Account model)
-        {
-            if (ModelState.IsValid)
-            {
-                model.TypeAccount = 3;
-                UserDao dao = new UserDao();
-                if (dao.InsertAcc(model) > 0)
-                {
-                    return RedirectToAction("Index", "Admin");
-                }
-                else
-                    ModelState.AddModelError("", "Lỗi!");
-            }
-            else
-                ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
-            return View("CreateAccount","Admin");
-        }
+
         public ActionResult UpdateInfo()
         {
             if (!check())
@@ -92,6 +100,7 @@ namespace BKFoodCourt.Controllers
             update.Email = login.Email;
             return View(update);
         }
+
         public ActionResult UpdateInfoAction(UpdateModel model)
         {
             if (ModelState.IsValid)
@@ -127,7 +136,38 @@ namespace BKFoodCourt.Controllers
                     }
                 }
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
             return View("UpdateInfo");
         }
+
+        //GET::Create Account
+        public ActionResult CreateAccount()
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
+        }
+
+        public ActionResult CreateAccountAction(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.TypeAccount = 3;
+                UserDao dao = new UserDao();
+                if (dao.InsertAcc(model) > 0)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                    ModelState.AddModelError("", "Lỗi!");
+            }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin.");
+            return View("CreateAccount");
+        }
+
     }
 }

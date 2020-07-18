@@ -27,6 +27,7 @@
                             <th>Ngày mua</th>
                             <th>Đơn hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
                             <th>Chi tiết</th>
                         </tr>
                     </thead>
@@ -36,6 +37,7 @@
                             <th>Ngày mua</th>
                             <th>Đơn hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
                             <th>Chi tiết</th>
                         </tr>
                     </tfoot>
@@ -47,6 +49,18 @@
                                 <th>@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</th>
                                 <th>@item.NumFood món ăn</th>
                                 <th>@item.Price</th>
+                                @if (item.State == 1)
+                                {
+                                    <th>Hoàn Thành</th>
+                                }
+                                else if (item.State == 0)
+                                {
+                                    <th>Đang làm món ăn</th>
+                                }
+                                else
+                                {
+                                    <th>Đơn hàng đã bị hủy</th>
+                                }
                                 <th><a href=@Url.Action("OrderDetail", "Customer", new { OrderID = item.ID })>Xem chi tiết</a></th>
                             </tr>
                         }

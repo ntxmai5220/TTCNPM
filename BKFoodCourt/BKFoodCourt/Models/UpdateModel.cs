@@ -14,5 +14,6 @@ namespace BKFoodCourt.Models
         public string RetypePassword { get; set; }
         [Required(ErrorMessage = "Nhập mật khẩu để cập nhật!")]
         public string OldPassword { get; set; }
+        public int ID { get; set; }
     }
 }
