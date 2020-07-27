@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@model List<BKFoodCourt.DatabaseAccess.EF.DonHang>
+
+<h1 class="h3 mb-2 text-gray-800">Đơn hàng của bạn</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách đơn hàng đã hoàn thành</h6>
+    </div>
+    <div class="card-body">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h6 class="m-0 font-weight-bold text-primary">Bạn chưa thực hiện đặt hàng</h6>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày mua</th>
+                            <th>Đơn hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày mua</th>
+                            <th>Đơn hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Chi tiết</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@item.OrderCode</th>
+                                <th>@item.Timer.Day/@item.Timer.Month/@item.Timer.Year</th>
+                                <th>@item.NumFood món ăn</th>
+                                <th>@item.Price</th>
+                                @if (item.State == 1)
+                                {
+                                    <th>Hoàn Thành</th>
+                                }
+                                else if (item.State == 0)
+                                {
+                                    <th>Đang làm món ăn</th>
+                                }
+                                else
+                                {
+                                    <th>Đơn hàng đã bị hủy</th>
+                                }
+                                <th><a href=@Url.Action("OrderDetail", "Customer", new { OrderID = item.ID })>Xem chi tiết</a></th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
