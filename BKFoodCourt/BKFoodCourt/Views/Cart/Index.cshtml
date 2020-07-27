@@ -1,0 +1,105 @@
+﻿@using BKFoodCourt.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<div class="wrap cf">
+    <h1 class="projTitle">BKFoodCourt Checkout</h1>
+    <div class="heading cf">
+        <h1>My Cart</h1>
+        <a href=@Url.Action("Index","Menu") class="continue">Quay lại menu</a>
+    </div>
+    <div class="cart">
+        <ul class="cartWrap">
+            @{
+                CartModel cartList = Session[BKFoodCourt.Common.CommonConstant.CART_SESSION] as CartModel;
+                if (cartList == null || cartList.cart == null || cartList.cart.Count == 0)
+                {
+                    <h2>Chưa có đơn hàng được đặt.</h2>
+                }
+                else
+                {
+                    for (int i = 0; i < cartList.cart.Count; i++)
+                    {
+                        <li class="items">
+                            <div class="infoWrap">
+                                <div class="cartSection">
+                                    <img src=@cartList.cart.ElementAt(i).Key.Url1 alt="" class="itemImg" style="height:100px;width:120px" />
+                                    <p class="itemNumber">#@cartList.cart.ElementAt(i).Key.ID</p>
+                                    <h3>Tên: @cartList.cart.ElementAt(i).Key.Name</h3>
+                                    <h3 style="font-size:12px">Đơn giá :@cartList.cart.ElementAt(i).Key.Price</h3>
+                                </div>
+
+                                <div class="prodTotal cartSection">
+                                    <p>@((cartList.cart.ElementAt(i).Value * cartList.cart.ElementAt(i).Key.Price) / 1000).000 đồng </p>
+                                </div>
+                                <div class="cartSection removeWrap">
+                                    <a href=@Url.Action("deleteCart","Cart",new { foodId = cartList.cart.ElementAt(i).Key.ID }) class="remove">x</a>
+                                </div>
+                            </div>
+                            <div style="font-size:16px">Số lượng:</div>
+                            <form action=@Url.Action("suaSoLuong","Cart") method="get">
+                                <input type="hidden" name="foodId" value=@cartList.cart.ElementAt(i).Key.ID />
+                                <input style="width:50px" type="number" min="1" step="1" max="20" id="soLuong" class="qty" value=@cartList.cart.ElementAt(i).Value name="soLuong">
+                                <button style="left:20px" type="submit" class="btn btn-success">Cập nhật </button>
+                            </form>
+                        </li>
+                        <hr>
+                    }
+
+                }
+            }
+        </ul>
+    </div>
+    @if (cartList != null && cartList.cart != null)
+    {
+        <div class="subtotal cf">
+            <ul>
+                <li class="totalRow"><span class="label">Subtotal: </span><span class="value">@(cartList.tongTien / 1000).000 đồng</span></li>
+            </ul>
+        </div>
+    }
+
+    <div class="row mt-5 pt-3 d-flex">
+        <div class="col-md-6 d-flex">
+        </div>
+        <div class="col-md-6">
+            <div class="cart-detail bg-light p-3 p-md-4">
+                <h3 class="billing-heading mb-4">Phương pháp thanh toán</h3>
+
+                @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label>@Html.RadioButton("TypePayment", "Momo")Thanh toán qua Momo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label>@Html.RadioButton("TypePayment", "Cash")Thanh toán bằng tiền mặt</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label>@Html.CheckBox("Accept")Tôi đã đọc và chấp nhận điều khoản và chính sách.</label>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                    <p><input type="submit" class="btn btn-primary py-3 px-4" value="Thanh toán" /></p>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+    <style>
+        .pagination-container {
+            padding-left: 50%;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+        .pagination a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+    </style>
+}
+
+
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<BKFoodCourt.DatabaseAccess.EF.Food>
+<div class="row">
+    @if (Model == null || Model.Count == 0)
+    {
+<h3>Không có dữ liệu.</h3> }
+else
+{
+foreach (var item in Model)
+{
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <img class="food-img-menu" src=@item.Url1>
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <br>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;"><a href=@Url.Action("Detail","Food",new { foodId = item.ID })>@item.Name</a></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">@item.Price đồng</div>
+                </div>
+                <div class="col-auto">
+                                @using (Html.BeginForm("addToCart", "Cart", new { foodId = item.ID }))
+                                {
+                                    <button type="submit" class="btn btn-success" style="font-size:18px"><i class="fa fa-cart-plus"> Thêm</i></button>
+                                }
+                </div>
+            </div>
+        </div>
+    </div>
+</div> }
+@Html.PagedListPager(Model, page => Url.Action("Index", "Menu", new { page }))}
+</div>
+

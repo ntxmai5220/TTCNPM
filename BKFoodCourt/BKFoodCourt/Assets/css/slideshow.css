@@ -1,0 +1,303 @@
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+.mySlides {display: none}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration:5s;
+    animation-name: fade;
+    animation-duration: 10s; 
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (width: 100%) {
+.prev, .next,.text {font-size: 11px}
+}
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+background-color: #717171;
+}
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+.text {
+color: #000000;
+font-size: 25px;
+padding: 8px 12px;
+position: absolute;
+top: 100px;
+width: 100%;
+text-align: center;
+}
+
+.food-image{
+    height: 500px;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.food-img-menu{
+    height: 270px;
+    width:270px;
+}
+.card-price{
+    left:50px;
+    width: 500px;
+    height: 100%!important;
+}
+.wrap {
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5% 0;
+    margin-bottom: 5em;
+}
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+.projTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    padding: 1em 0;
+    border-bottom: 1px solid #dadada;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.projTitle span {
+    font-family: "Droid Serif", serif;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: lowercase;
+    color: #777;
+}
+.heading {
+    padding: 1em 0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+    .heading h1 {
+        font-family: "Droid Serif", serif;
+        font-size: 2em;
+        float: left;
+    }
+
+    .heading a.continue:link, .heading a.continue:visited {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -.015em;
+        font-size: .75em;
+        padding: 1em;
+        color: #fff;
+        background: #82ca9c;
+        font-weight: bold;
+        border-radius: 50px;
+        float: right;
+        text-align: right;
+        -webkit-transition: all 0.25s linear;
+        -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+        -o-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+    }
+
+    .heading a.continue:after {
+        content: "\276f";
+        padding: .5em;
+        position: relative;
+        right: 0;
+        -webkit-transition: all 0.15s linear;
+        -moz-transition: all 0.15s linear;
+        -ms-transition: all 0.15s linear;
+        -o-transition: all 0.15s linear;
+        transition: all 0.15s linear;
+    }
+
+    .heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
+        background: #f69679;
+    }
+
+        .heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
+            right: -10px;
+        }
+        .cart {
+            padding: 1em 0;
+        }
+        
+            .cart .items {
+                display: block;
+                width: 100%;
+                vertical-align: middle;
+                padding: 1.5em;
+                border-bottom: 1px solid #fafafa;
+            }
+        
+                .cart .items.even {
+                    background: #fafafa;
+                }
+        
+                .cart .items .infoWrap {
+                    display: table;
+                    width: 100%;
+                }
+        
+                .cart .items .cartSection {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+        
+                    .cart .items .cartSection .itemNumber {
+                        font-size: .75em;
+                        color: #777;
+                        margin-bottom: .5em;
+                    }
+        
+                    .cart .items .cartSection h3 {
+                        font-size: 1em;
+                        font-family: "Montserrat", sans-serif;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: .025em;
+                    }
+        
+                    .cart .items .cartSection p {
+                        display: inline-block;
+                        font-size: .85em;
+                        color: #777777;
+                        font-family: "Montserrat", sans-serif;
+                    }
+        
+                        .cart .items .cartSection p .quantity {
+                            font-weight: bold;
+                            color: #333;
+                        }
+        
+                        .cart .items .cartSection p.stockStatus {
+                            color: #82CA9C;
+                            font-weight: bold;
+                            padding: .5em 0 0 1em;
+                            text-transform: uppercase;
+                        }
+        
+                            .cart .items .cartSection p.stockStatus.out {
+                                color: #F69679;
+                            }
+        
+                    .cart .items .cartSection .itemImg {
+                        width: 4em;
+                        float: left;
+                    }
+        
+                    .cart .items .cartSection.qtyWrap, .cart .items .cartSection.prodTotal {
+                        text-align: center;
+                    }
+        
+                        .cart .items .cartSection.qtyWrap p, .cart .items .cartSection.prodTotal p {
+                            font-weight: bold;
+                            font-size: 1.25em;
+                        }
+        
+                    .cart .items .cartSection input.qty {
+                        width: 2em;
+                        text-align: center;
+                        font-size: 1em;
+                        padding: .25em;
+                        margin: 1em .5em 0 0;
+                    }
+        
+                    .cart .items .cartSection .itemImg {
+                        width: 8em;
+                        display: inline;
+                        padding-right: 1em;
+                    }
+                    a.btn.continue {
+                        width: 100%;
+                        text-align: center;
+                    }
+                    a.remove {
+                        text-decoration: none;
+                        font-family: "Montserrat", sans-serif;
+                        color: #ffffff;
+                        font-weight: bold;
+                        background: #e0e0e0;
+                        padding: .5em;
+                        font-size: .75em;
+                        display: inline-block;
+                        border-radius: 100%;
+                        line-height: .85;
+                        -webkit-transition: all 0.25s linear;
+                        -moz-transition: all 0.25s linear;
+                        -ms-transition: all 0.25s linear;
+                        -o-transition: all 0.25s linear;
+                        transition: all 0.25s linear;
+                    }
+                    
+                        a.remove:hover {
+                            background: #f30;
+                        }
+                            
