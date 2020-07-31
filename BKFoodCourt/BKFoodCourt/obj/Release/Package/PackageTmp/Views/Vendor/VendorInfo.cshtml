@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Thông tin";
+    Layout = "~/Views/Shared/_LayoutVendor.cshtml";
+}
+
+@model BKFoodCourt.Models.LoginModel
+
+
+<div class="col-lg-7 col-md-10">
+    <h2 class="text-black-50">Xin chào @Model.Name</h2>
+    <p class="text-black-50 mt-0 mb-5">Đây là thông tin của bạn, nhấn Chỉnh sửa để cập nhật thông tin.</p>
+    <a href=@Url.Action("UpdateInfo","Vendor") class="btn btn-success">Chỉnh sửa</a>
+    <br /><br />
+</div>
+
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-4 order-xl-2">
+            <p><img src="~/Assets/img/hcmut.jpg" alt="" class="img-fluid"></p>
+            <p class="text-black">
+                Address: <br> 268 Lý Thường Kiệt, Phường 14, Quận 10 <br> Hồ Chí Minh, Việt Nam <br> <br>
+                Phone: <br> +(84) 123 456 <br> <br>
+                Email: <br> <a href="mailto:info@bkfoodcourt.com">info@bkfoodcourt.com</a>
+            </p>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">Thông tin cá nhân</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        <h6 class="heading-small text-muted mb-4">Thông tin manager</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tên</label>
+                                        @*<input class="form-control" value=@Model.Name.ToString() readonly>*@
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @value = Model.Name, @readonly = "readonly" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Email</label>
+                                        <input class="form-control" value=@Model.Email readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <br />
+                                        <label class="form-control-label" for="input-first-name">Loại tài khoản: Vendor</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-last-name">Mật khẩu</label>
+                                        <input type="password" class="form-control" value="123456" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

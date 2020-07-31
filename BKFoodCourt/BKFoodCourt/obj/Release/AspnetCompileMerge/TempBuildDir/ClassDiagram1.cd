@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BKFoodCourt.RouteConfig" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.MvcApplication" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Common.CartSession" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\CartSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Common.CommonConstant" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAIAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Common\CommonConstant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Common.NotificationSession" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\NotificationSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Common.UserSession" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAwAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Common\UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.AdminController" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAIAAAAAAAgBAAAAAAAAQEAAAEAAAAADQA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.CartController" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIJAAAAAAAAAACIAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CartController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.CookController" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAIAAAAAgAAAIAAABAAAAAAACEAAAAAEQA=</HashCode>
+      <FileName>Controllers\CookController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.CustomerController" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAEAIAAAACBAAAAAACAAAQBAAACEAAAAAAQA=</HashCode>
+      <FileName>Controllers\CustomerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.FoodController" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Controllers\FoodController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.HomeController" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.MenuController" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\MenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.PaymentController" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQiDAIAYAEACAAACAAEAAAAgAAEAAEAADIAAAA=</HashCode>
+      <FileName>Controllers\PaymentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.UserController" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAEAAAAAAAAAAIAAAAACAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Controllers.VendorController" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAQEAJAAAAAAAgBAAACAAAAQAAAAEACAAAHQA=</HashCode>
+      <FileName>Controllers\VendorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.Dao.FoodDao" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAQAAAAAAAABAAAAAAAAAAAACAAgAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\Dao\FoodDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.Dao.NotificationDao" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQQAEAAAAAAAAAAAAAAAAIAEAAgAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\Dao\NotificationDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.Dao.OrderDao" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAAAAgAAAQEBAAAAAAAAAAAAEAAAIAAQAAAAIAAAE=</HashCode>
+      <FileName>DatabaseAccess\Dao\OrderDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.Dao.StatisticDao" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAgAwgAAAAAAAAAEAAAAAAAAAAAAAEAAAQAA=</HashCode>
+      <FileName>DatabaseAccess\Dao\StatisticDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.Dao.UserDao" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAQAEAAAAAAAAAAAAAAAEAAAAAQAAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\Dao\UserDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.Account" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAggIAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\EF\Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.BKFoodCourt" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAgAAAEABAAAAAAEAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\EF\BKFoodCourt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.DonHang" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAggAAIABAAAAAAEAAAAAAAAAAAFAAEAEA=</HashCode>
+      <FileName>DatabaseAccess\EF\DonHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.Food" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAggAAAABAAAAQAcAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseAccess\EF\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.Notification" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAABEAAAAAAAEAAAAAAIAAAABAAEAEA=</HashCode>
+      <FileName>DatabaseAccess\EF\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.DatabaseAccess.EF.OrderDetail" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAgAAAAAAAAAAAQAAAAAAIAAAAAoAAAAA=</HashCode>
+      <FileName>DatabaseAccess\EF\OrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.CartModel" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CartModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.ListOrderModel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAQAAgAAIAAAAAAAAEAAACAAAAAAABAAEAAA=</HashCode>
+      <FileName>Models\ListOrderModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.LoginModel" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAgAAAAAAAAAQAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\LoginModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.NotificationModel" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\NotificationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.SignupModel" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgACACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SignupModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.StatisticModel" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAIAAgAggAAAAAAAAAAAAAAAAAAAAAAAEAAAQAA=</HashCode>
+      <FileName>Models\StatisticModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.UpdateModel" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAABAAAAQAAEAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\UpdateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.Momo.MoMoSecurity" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAACAACAAIAAAAEAAABAAAAAAA=</HashCode>
+      <FileName>Models\Momo\MoMoSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BKFoodCourt.Models.Momo.PaymentRequest" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Momo\PaymentRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

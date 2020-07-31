@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Thông báo";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@model List<BKFoodCourt.DatabaseAccess.EF.OrderDetail>
+@{ var tmp = Model.ElementAt(0);
+    int total = 0;
+}
+<div class="wrap cf">
+    <h1 class="projTitle">Chi tiết đơn hàng</h1>
+    <div class="cart">
+        <ul class="cartWrap">
+            @foreach (var item in Model)
+            {
+                <li class="items odd">
+                    <div class="infoWrap">
+                        <div class="cartSection">
+                            <img src=@item.Food.Url1 alt="" class="itemImg" />
+                            <p class="itemNumber">@item.FoodID</p>
+                            <h3>@item.Food.Name</h3>
+                            <p> <input type="text" class="qty" readonly="readonly" placeholder="@item.Quantily" /> x @item.Food.Price đồng</p>
+                        </div>
+                        <div class="prodTotal cartSection">
+                            <p>@(item.Quantily * item.Food.Price) đồng</p>
+                            @{ total += item.Quantily * item.Food.Price; }
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="subtotal cf">
+        <ul>
+            <li class="totalRow"><span class="label">Subtotal: </span><span class="value">@total đồng</span></li>
+        </ul>
+    </div>
+</div>
+

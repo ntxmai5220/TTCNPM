@@ -12,6 +12,21 @@ namespace BKFoodCourt.Controllers
 {
     public class CookController : Controller
     {
+        public void loadNotification()
+        {
+            Session[CommonConstant.NOTIFICATION_SESSION] = new NotificationModel();
+            NotificationModel notificationModel = Session[CommonConstant.NOTIFICATION_SESSION] as NotificationModel;
+            var dao = new NotificationDao();
+            if (dao.getNumDonHang() == 0)
+            {
+                notificationModel.check = false;
+            }
+            else
+            {
+                notificationModel.check = true;
+            }
+        }
+
         private bool check()
         {
             LoginModel login = Session[CommonConstant.USER_SESSION] as LoginModel;
@@ -28,6 +43,7 @@ namespace BKFoodCourt.Controllers
             {
                 return RedirectToAction("Login", "User");
             }
+            loadNotification();
             return View();
         }
         //GET: OrderList
@@ -66,6 +82,16 @@ namespace BKFoodCourt.Controllers
             DonHang item = dao.getOrder(ID);
             item.State = 2;
             dao.UpdateOrder(item);
+            //
+            Notification notification = new Notification();
+            notification.CustomerID = item.CustomerID;
+            notification.DonHangID = item.ID;
+            notification.Infomation = "đã bị hủy";
+            notification.State = false;
+            notification.Timer = DateTime.Now;
+            var Dao = new NotificationDao();
+            Dao.AddNotificationDao(notification);
+
             return RedirectToAction("OrderList", "Cook");
         }
 
@@ -76,12 +102,22 @@ namespace BKFoodCourt.Controllers
             return View(res);
         }
 
-        public ActionResult Finsh(int ID)
+        public ActionResult Finish(int ID)
         {
             var dao = new OrderDao();
             DonHang item = dao.getOrder(ID);
             item.State = 1;
             dao.UpdateOrder(item);
+
+            //
+            Notification notification = new Notification();
+            notification.CustomerID = item.CustomerID;
+            notification.DonHangID = item.ID;
+            notification.Infomation = "đã hoàn thành";
+            notification.State = false;
+            notification.Timer = DateTime.Now;
+            var Dao = new NotificationDao();
+            Dao.AddNotificationDao(notification);
             return RedirectToAction("OrderList", "Cook");
         }
         
@@ -136,7 +172,7 @@ namespace BKFoodCourt.Controllers
                     }
                     if (res == 0)
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng");
+                        ModelState.AddModelError("", "Mật khẩu không đúng");
                     }
                     if (res == -1)
                     {

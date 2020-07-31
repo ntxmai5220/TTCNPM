@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Xóa món ăn";
+    Layout = "~/Views/Shared/_LayoutVendor.cshtml";
+    <link href="~/Assets/css/slideshow.css" rel="stylesheet">
+    <style>
+
+        .pagination-container {
+            padding-left: 50%;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+            .pagination a.active {
+                background-color: dodgerblue;
+                color: white;
+            }
+    </style>
+}
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<BKFoodCourt.DatabaseAccess.EF.Food>
+
+@using (Html.BeginForm("UpdateMenu", "Vendor", FormMethod.Get, new { @class = "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" }))
+{
+    <div class="input-group">
+        @Html.TextBox("search", null, new { @class = "form-control border-0", @style = "background-color:white", @placeholder = "Tìm kiếm món ăn..." })
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+                <i class="fa fa-search fa-sm"></i>
+            </button>
+        </div>
+    </div>}
+<br />
+<br />
+<div class="row">
+    @if (Model == null || Model.Count == 0)
+    {
+        <h3>Không có dữ liệu.</h3> }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <img class="food-img-menu" src=@item.Url1>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <br>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 16px;"><a href=@Url.Action("UpdateItem","Vendor",new { foodId = item.ID })>@item.Name</a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@item.Price đồng</div>
+                            </div>
+                            <div class="col-auto">
+                                <br><br>
+                                <a href=@Url.Action("DeleteFoodAction", "Vendor", new { id = item.ID })>Xoá</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> }
+        @Html.PagedListPager(Model, page => Url.Action("DeleteFood", "Vendor", new { page }))}
+</div>
+

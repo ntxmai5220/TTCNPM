@@ -65,6 +65,8 @@ namespace BKFoodCourt.Controllers
                         return View("Login");
                 }
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin");
             return View("Login");
 
 
@@ -106,6 +108,8 @@ namespace BKFoodCourt.Controllers
                 }
 
             }
+            else
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin");
             return View("Signup");
         }
 

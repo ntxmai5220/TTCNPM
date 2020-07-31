@@ -107,6 +107,28 @@ namespace BKFoodCourt.Controllers
             return View("AddFood");
         }
 
+        public ActionResult DeleteFood(string search, int? page)
+        {
+            if (!check())
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var dao = new FoodDao();
+            List<Food> foodList = dao.search(search);
+            return View(foodList.ToPagedList(page ?? 1, 8));
+        }
+
+        public ActionResult DeleteFoodAction(int id)
+        {
+            var dao = new FoodDao();
+            if (dao.Remove(dao.getById(id)))
+            {
+                return RedirectToAction("DeleteFood");
+            }
+            else
+                return RedirectToAction("DeleteFood");
+        }
+
         public ActionResult VendorInfo()
         {
             if (!check())
@@ -143,7 +165,7 @@ namespace BKFoodCourt.Controllers
             }
             else
                 ModelState.AddModelError("", "Vui lòng điền đầy đủ các trường.");
-            return View("CreateAccount","Vendor");
+            return View("CreateAccount");
         }
 
         public ActionResult Report()
@@ -153,25 +175,19 @@ namespace BKFoodCourt.Controllers
                 return RedirectToAction("Login", "User");
             }
             var dao = new OrderDao();
-            List<ListOrderModel> res = new List<ListOrderModel>();
             List<DonHang> listOrder = new List<DonHang>();
             listOrder = dao.getOrderFinsh();
-            foreach (var item in listOrder)
+            return View(listOrder);
+        }
+
+        public ActionResult ReportDetail(int OrderID)
+        {
+            if (!check())
             {
-                ListOrderModel order = new ListOrderModel();
-                order.ID = item.ID;
-                order.OrderCode = item.OrderCode;
-                order.CustomerID = item.CustomerID;
-                order.Price = item.Price;
-                order.Timer = item.Timer;
-                order.State = item.State;
-                List<OrderDetail> tmp = dao.getInfoOrder(item.ID);
-                foreach (var i in tmp)
-                {
-                    order.list.Add(i.FoodID, i.Quantily);
-                }
-                res.Add(order);
+                return RedirectToAction("Login", "User");
             }
+            var dao = new OrderDao();
+            List<OrderDetail> res = dao.getInfoOrder(OrderID);
             return View(res);
         }
 

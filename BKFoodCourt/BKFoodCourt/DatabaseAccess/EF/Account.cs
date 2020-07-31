@@ -13,6 +13,7 @@ namespace BKFoodCourt.DatabaseAccess.EF
         public Account()
         {
             DonHangs = new HashSet<DonHang>();
+            Notifications = new HashSet<Notification>();
         }
 
         public int ID { get; set; }
@@ -33,5 +34,8 @@ namespace BKFoodCourt.DatabaseAccess.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Notification> Notifications { get; set; }
     }
 }

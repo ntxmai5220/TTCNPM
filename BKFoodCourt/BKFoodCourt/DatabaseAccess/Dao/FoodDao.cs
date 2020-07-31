@@ -53,5 +53,18 @@ namespace BKFoodCourt.DatabaseAccess.Dao
                 return -1;
             }
         }
+        public bool Remove(Food entity)
+        {
+            try
+            {
+                db.Foods.Remove(entity);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
