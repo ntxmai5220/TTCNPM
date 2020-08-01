@@ -7,4 +7,4 @@ Nội dung báo cáo trong file report
 Publisher: Soure code dữ liệu để up lên webside
 
 Website : http://bkfoodcourt.somee.com/
-Video demo:
+Video demo: https://www.youtube.com/watch?v=UmobM8_rZAY
