@@ -130,7 +130,7 @@ namespace BKFoodCourt.Controllers
                     }
                 }
             }
-            return View("UpdateInfo");
+            return RedirectToAction("UpdateInfo");
         }
 
         //GET::Create Account

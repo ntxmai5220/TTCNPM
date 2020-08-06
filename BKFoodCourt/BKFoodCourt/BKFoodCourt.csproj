@@ -112,6 +112,7 @@
     <Content Include="App_Data\BKFOODCOURT_log.ldf">
       <DependentUpon>BKFOODCOURT.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\DB.sql" />
     <Content Include="Assets\css\cart.css" />
     <Content Include="Assets\css\sb-admin-2.css" />
     <Content Include="Assets\css\sb-admin-2.min.css" />
